@@ -14,6 +14,7 @@ doing set operations on tuples
 """
 
 import json
+import rich
 
 
 def slice_dict(my_dict, keys): 
@@ -61,5 +62,7 @@ def key_dict(d, k):
     )
 
 
-def pprint_dict(my_dict):
+def pprint_dict(my_dict, use_rich=True):
+    print_function = rich.print if use_rich else print
+
     print(json.dumps(my_dict, indent=4))
